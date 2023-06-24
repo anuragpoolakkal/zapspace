@@ -6,11 +6,11 @@ import joi from "joi";
 const router = express.Router();
 
 router.get("/", validate, async (req, res) => {
-  res.send(await BusinessModel.findOne({ owner: req.user._id }));
+  res.send(await BusinessModel.findOne({ owner: req.user.id }));
 });
 
 router.post("/", validate, async (req, res) => {
-  const schema = joi.schema({
+  const schema = joi.object({
     name: joi.string().required(),
     description: joi.string().required(),
     category: joi.number().required(),
@@ -20,13 +20,14 @@ router.post("/", validate, async (req, res) => {
     const data = await schema.validateAsync(req.body);
     const business = new BusinessModel({
       ...data,
-      owner: req.user._id,
+      owner: req.user.id,
     });
 
     await business.save();
 
     return res.status(200).send(business);
   } catch (err) {
+    console.log(err)
     return res.status(500).send("Something went wrong");
   }
 });

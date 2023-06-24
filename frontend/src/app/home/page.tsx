@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { FiX, FiUser } from "react-icons/fi";
 import Image from "next/image";
-import { serverURL, onboardingMessages } from "@/utils/util";
+import { serverURL, onboardingMessages, businessCategories } from "@/utils/util";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { ToastContainer } from "react-toastify";
@@ -28,7 +28,7 @@ export default function Home() {
     const [createBusinessData, setCreateBusinessData] = useState({
         name: "",
         description: "",
-        category: 0,
+        category: -1,
     });
 
     const signUp = async () => {
@@ -45,6 +45,7 @@ export default function Home() {
             console.log(response.data);
             toast.success("Signed Up Successfully");
             setShowSignUp(false);
+            getBusiness();
         }).catch((error) => {
             console.log(error);
         });
@@ -67,12 +68,13 @@ export default function Home() {
             localStorage.setItem("token", response.data.token);
             toast.success("Logged In Successfully");
             setShowLogin(false);
+            getBusiness();
         }).catch((error) => {
             console.log(error);
         });
     };
 
-    const [businessData, setBusinessData] = useState();
+    const [businessData, setBusinessData] = useState<any>({name: ""});
 
     const getBusiness = async () => {
         const config = {
@@ -92,11 +94,36 @@ export default function Home() {
 
     const [onboardingIndex, setOnboardingIndex] = useState(0);
 
+    const createBusiness = () => {
+        const config = {
+            method: "POST",
+            url: `${serverURL}/business`,
+            headers: {
+                "Authorization": `Bearer ${localStorage.getItem("token")}`,
+                "Content-Type": "application/json"
+            },
+            data: {
+                name: createBusinessData.name,
+                description: createBusinessData.description,
+                category: createBusinessData.category
+            },
+        };
+
+        axios(config).then((response) => {
+            toast.success("Business Created Successfully");
+            setBusinessData(response.data);
+            getBusiness();
+        }).catch((error) => {
+            toast.error("Something went wrong");
+            console.log(error);
+        });
+    };
+
     useEffect(() => {
         getBusiness();
     }, []);
 
-    return <div className="flex w-screen h-screen bg-white flex flex-col text-black p-5">
+    return <div className="flex w-screen h-screen bg-white flex-col text-black p-5">
         <nav className="flex justify-between">
             <p className="text-lg font-bold">Zapspace</p>
             {localStorage.getItem("user") ? <div className="flex items-center"><FiUser onClick={() => {
@@ -149,7 +176,7 @@ export default function Home() {
         </main> : ""}
         {/* Login */}
         {/* Onboarding */}
-        {showOnboarding ? <main className="absolute left-0 top-0 w-full h-full flex flex-col bg-[#DDC12D] p-5">
+        {showOnboarding ? <main style={{ background: createBusinessData.category !== -1 ? businessCategories[createBusinessData.category].color : "#DDC12D" }} className="absolute left-0 top-0 w-full h-full flex flex-col p-5">
             <nav className="flex w-full justify-between">
                 <p className="text-lg font-bold">Zapspace</p>
                 <FiX onClick={() => { setShowOnboarding(false); setOnboardingIndex(0) }} className="cursor-pointer text-2xl" />
@@ -160,13 +187,30 @@ export default function Home() {
                     <p className="text-2xl font-semibold mb-3">{onboardingMessages[onboardingIndex].title}</p>
                     {onboardingIndex === 0 ? <input type="text" onChange={(x) => {
                         setCreateBusinessData({ ...createBusinessData, name: x.target.value });
-                    }} value={onboardingIndex === 0 ? createBusinessData.name : onboardingIndex === 1 ? createBusinessData.description : ""} placeholder="Business name" className="input input-bordered w-full max-w-xs" /> : onboardingIndex === 1 ? <textarea className="textarea textarea-bordered" placeholder="Description"></textarea> : <select className="select select-bordered w-full max-w-xs">
-                        <option disabled selected>Business Category</option>
-                        <option>Han Solo</option>
-                        <option>Greedo</option>
-                    </select>}
+                    }} value={createBusinessData.name} placeholder="Business name" className="input input-bordered w-full max-w-xs" />
+                        :
+                        onboardingIndex === 1
+                            ?
+                            <textarea onChange={(x) => {
+                                setCreateBusinessData({ ...createBusinessData, description: x.target.value });
+                            }} className="textarea textarea-bordered" value={createBusinessData.description} placeholder="Description"></textarea>
+                            :
+                            <select onChange={(x) => setCreateBusinessData({ ...createBusinessData, category: parseInt(x.target.value) })} className="select select-bordered w-full max-w-xs" value={createBusinessData.category}>
+                                <option value={-1} disabled selected>Business Category</option>
+                                {
+                                    businessCategories.map((category, index) => {
+                                        return <option value={index}>{category.category}</option>
+                                    })
+                                }
+                            </select>}
                     <div className="flex">
                         <button onClick={() => {
+                            if (onboardingIndex === onboardingMessages.length - 1) {
+                                setShowOnboarding(false);
+                                setOnboardingIndex(0);
+                                createBusiness();
+                            }
+
                             if (onboardingIndex < onboardingMessages.length - 1) {
                                 setOnboardingIndex(onboardingIndex + 1)
                             }
@@ -179,14 +223,19 @@ export default function Home() {
         </main> : ""}
         {/* Onboarding */}
         <main className="w-full h-full flex flex-col justify-center items-center">
-            <p className="text-2xl font-semibold">Start your business in a few clicks</p>
+            <p className="text-2xl font-semibold">{businessData.name ? `Welcome ${businessData.name}!` : "Start your business in a few clicks"}</p>
             <button onClick={() => {
-                if (localStorage.getItem("user") == null) {
-                    setShowSignUp(true);
-                } else if (!businessData) {
-                    setShowOnboarding(true);
+                if (businessData.name) {
+                    window.location.href = "/dashboard";
                 }
-            }} className="btn btn-neutral mt-7">GET STARTED</button>
+                else {
+                    if (localStorage.getItem("user") == null) {
+                        setShowSignUp(true);
+                    } else if (!businessData) {
+                        setShowOnboarding(true);
+                    }
+                }
+            }} className="btn btn-neutral mt-7">{businessData.name ? "Go to Dashboard" : "GET STARTED"}</button>
         </main>
         <ToastContainer />
     </div>;
