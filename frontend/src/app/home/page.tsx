@@ -218,7 +218,7 @@ export default function Home() {
                         }} className="btn btn-neutral mt-7">{onboardingIndex === onboardingMessages.length - 1 ? "Create" : "Next"}</button>
                     </div>
                 </div>
-                <Image src="https://cdn3d.iconscout.com/3d/premium/thumb/shopping-store-5130510-4292743.png" alt="icon" width={500} height={500} />
+                <Image src={createBusinessData.category !== -1 ? businessCategories[createBusinessData.category].image : "https://cdn3d.iconscout.com/3d/premium/thumb/shopping-store-5130510-4292743.png"} alt="icon" width={500} height={500} />
             </div>
         </main> : ""}
         {/* Onboarding */}
