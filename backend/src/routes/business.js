@@ -21,6 +21,7 @@ router.post("/", validate, async (req, res) => {
     const business = new BusinessModel({
       ...data,
       owner: req.user.id,
+      businessId: data.name.toLowerCase().split(" ").join("")
     });
 
     await business.save();
