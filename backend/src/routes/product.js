@@ -16,19 +16,17 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-router.post("/", upload.array("images"), async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    // Extract the data from the request body
-    const { name, price, stock, description, seller } = req.body;
-
+    const { name, price, stock, description, businessID } = req.body;
     // Create a new product instance
     const product = new Product({
       name,
       price,
       stock,
+      images,
       description,
-      images: req.files.map((file) => file.filename), // Save the filenames of the uploaded images
-      seller,
+      businessID,
     });
 
     // Save the product to the database
@@ -43,12 +41,20 @@ router.post("/", upload.array("images"), async (req, res) => {
 
 router.get("/products", async (req, res) => {
   try {
-    // Fetch all products from the database
-    const products = await Product.find();
+    const { businessID } = req.query;
+
+    let products;
+    if (businessID) {
+      // Fetch products filtered by seller ID
+      products = await Product.find({ businessID });
+    } else {
+      // Fetch all products
+      products = await Product.find();
+    }
 
     res.json(products);
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch  products" });
+    res.status(500).json({ error: "Failed to fetch products" });
   }
 });
 
@@ -72,7 +78,7 @@ router.get("/products/:id", async (req, res) => {
 router.put("/products/:id", upload.array("images"), async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, price, stock, description, seller } = req.body;
+    const { name, price, stock, description, businessID } = req.body;
 
     // Find the product by its ID
     const product = await Product.findById(id);
@@ -87,7 +93,7 @@ router.put("/products/:id", upload.array("images"), async (req, res) => {
     product.stock = stock;
     product.description = description;
     product.images = req.files.map((file) => file.filename);
-    product.seller = seller;
+    product.businessID = businessID;
 
     // Save the updated product
     const updatedProduct = await product.save();
@@ -115,5 +121,12 @@ router.delete("/products/:id", async (req, res) => {
   }
 });
 
+router.post("/upload", upload.array("images"), async (req, res) => {
+  try {
+    res.json(req.files.map((file) => file.filename));
+  } catch (error) {
+    res.status(500).json({ error: "Failed to upload images" });
+  }
+});
 
 export default router;
