@@ -15,7 +15,7 @@ export default function Products() {
 	};
 
 	const handleAddProduct = (event : Chan) => {
-		event.preventDefault();
+		event.preventDefault(); 
 		const files = fileInputRef.current.files;
 		const name = event.target.elements.name.value;
 		const description = event.target.elements.description.value;
