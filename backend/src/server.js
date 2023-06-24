@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import validate from "./utils/userValidate.js";
 import userRoutes from "./routes/user.js";
+import businessRoutes from "./routes/business.js";
 
 //* CONFIGURATIONS
 const app = express();
@@ -33,4 +34,5 @@ app.get("/", (req, res) => {
   res.send("Hello to zap space API");
 });
 
-app.use("/user", validate, userRoutes);
+app.use("/user", userRoutes);
+app.use("/business", businessRoutes);

@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 //validate jsonwebtoken for requests 
 
 export default function (req, res, next) {
-    const token = req.header('auth-token');
+    const token = req.headers.authorization.split(' ')[1];
     
     if (!token) return res.status(401).send('Access Denied');
 
