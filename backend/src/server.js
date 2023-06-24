@@ -7,6 +7,7 @@ import morgan from "morgan";
 import validate from "./utils/userValidate.js";
 import userRoutes from "./routes/user.js";
 import businessRoutes from "./routes/business.js";
+import productRoutes from "./routes/product.js";
 
 //* CONFIGURATIONS
 const app = express();
@@ -36,3 +37,4 @@ app.get("/", (req, res) => {
 
 app.use("/user", userRoutes);
 app.use("/business", businessRoutes);
+app.use("/product", productRoutes);
