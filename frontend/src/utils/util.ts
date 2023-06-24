@@ -12,4 +12,8 @@ const onboardingMessages = [
   },
 ];
 
+const categories = [
+    
+];
+
 export { serverURL, onboardingMessages };
