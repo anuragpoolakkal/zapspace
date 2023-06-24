@@ -22,9 +22,9 @@ const productSchema = new mongoose.Schema(
         type: Array,
         default: [],
     },
-    seller: {
+    businessID: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'Business',
         required: true,
     },
   }, { timestamps: true });
