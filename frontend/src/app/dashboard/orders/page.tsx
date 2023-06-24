@@ -13,7 +13,7 @@ export default function Orders() {
                 return <div className="flex bg-gray-100 rounded-lg m-3 p-3">
                     <Image src={"https://static.toiimg.com/thumb/imgsize-23456,msid-88137086,width-600,resizemode-4/88137086.jpg"} width={200} height={200} alt="hello" />
                     <div className="flex flex-col justify-center ml-5">
-                        <p className="text-lg font-semibold">Product Name</p>
+                        <p className="text-lg font-semibold">Order</p>
                         <p>Elegant pot home made pot good pot.</p>
                         <p className="mt-3">₹ 250</p>
                     </div>

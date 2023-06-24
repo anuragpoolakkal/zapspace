@@ -63,6 +63,8 @@ const potteryProducts = [
 	},
 ];
 
+
+
 const businessCategories = [
 	{
 		category: "Cool Drinks",
@@ -101,4 +103,4 @@ const businessCategories = [
 	},
 ];
 
-export { serverURL, onboardingMessages, businessCategories };
+export { serverURL, onboardingMessages, businessCategories, potteryProducts };
