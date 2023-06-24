@@ -1,5 +1,6 @@
 import express from "express";
-import Product from "../models/productModel";
+import Product from "../models/productModel.js";
+import multer from "multer";
 
 const router = express.Router();
 
@@ -15,7 +16,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-router.post("/products", upload.array("images"), async (req, res) => {
+router.post("/", upload.array("images"), async (req, res) => {
   try {
     // Extract the data from the request body
     const { name, price, stock, description, seller } = req.body;
@@ -36,6 +37,7 @@ router.post("/products", upload.array("images"), async (req, res) => {
     res.status(201).json(savedProduct);
   } catch (error) {
     res.status(500).json({ error: "Failed to create product" });
+    console.error(error);
   }
 });
 
@@ -46,7 +48,7 @@ router.get("/products", async (req, res) => {
 
     res.json(products);
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch products" });
+    res.status(500).json({ error: "Failed to fetch  products" });
   }
 });
 
