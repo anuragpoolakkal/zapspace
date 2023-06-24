@@ -12,7 +12,7 @@ router.get("/", validate, async (req, res) => {
 router.post("/", validate, async (req, res) => {
   const schema = joi.schema({
     name: joi.string().required(),
-    deacription: joi.string().required(),
+    description: joi.string().required(),
     category: joi.number().required(),
   });
 
