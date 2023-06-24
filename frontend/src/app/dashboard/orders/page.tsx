@@ -3,15 +3,12 @@ import Image from "next/image";
 import { useRef } from "react";
 import { FiPlus } from "react-icons/fi";
 
-export default function Products() {
+export default function Orders() {
     const modalRef = useRef(null);
 
     return <div className="flex flex-col text-black w-full">
-        <p className="text-2xl font-semibold mb-4">Products</p>
-        <div className="flex">
-            <button className="btn mb-2" onClick={() => window.my_modal_1.showModal()}><FiPlus />New Product</button>
-        </div>
-        <main className="overflow-y-scroll h-[80vh]">
+        <p className="text-2xl font-semibold mb-4">Orders</p>
+        <main className="overflow-y-scroll h-[85vh]">
             {[1, 1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 1].map((item, index) => {
                 return <div className="flex bg-gray-100 rounded-lg m-3 p-3">
                     <Image src={"https://static.toiimg.com/thumb/imgsize-23456,msid-88137086,width-600,resizemode-4/88137086.jpg"} width={200} height={200} alt="hello" />
