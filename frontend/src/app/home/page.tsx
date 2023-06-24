@@ -74,7 +74,7 @@ export default function Home() {
         });
     };
 
-    const [businessData, setBusinessData] = useState<any>({name: ""});
+    const [businessData, setBusinessData] = useState<any>({ name: "" });
 
     const getBusiness = async () => {
         const config = {
@@ -236,6 +236,10 @@ export default function Home() {
                     }
                 }
             }} className="btn btn-neutral mt-7">{businessData.name ? "Go to Dashboard" : "GET STARTED"}</button>
+            {businessData.name ? <div className="flex w-full justify-between absolute bottom-0 left-0">
+                <Image src={businessData?.category !== -1 ? businessCategories[businessData.category]?.image : "https://cdn3d.iconscout.com/3d/premium/thumb/shopping-store-5130510-4292743.png"} alt="icon" width={250} height={250} />
+                <div style={{ background: businessData?.category !== -1 ? businessCategories[businessData.category]?.color : "#DDC12D" }} className="absolute right-[-80px] bottom-[-80px] rounded-full w-[250px] h-[250px]"></div>
+            </div> : ""}
         </main>
         <ToastContainer />
     </div>;

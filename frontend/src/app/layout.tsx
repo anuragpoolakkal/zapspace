@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="bumblebee">
-      <body className={poppins.className}>
+      <body className={poppins.className + " overflow-hidden"}>
         {children}
       </body>
     </html>
