@@ -63,10 +63,6 @@ const potteryProducts = [
 	},
 ];
 
-const potteryOrders = [
-  {name: "", price: "", products},
-]
-
 const businessCategories = [
 	{
 		category: "Cool Drinks",
