@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import morgan from "morgan";
+import validate from "./utils/userValidate.js";
+import userRoutes from "./routes/user.js";
 
 //* CONFIGURATIONS
 const app = express();
@@ -30,3 +32,5 @@ mongoose
 app.get("/", (req, res) => {
   res.send("Hello to zap space API");
 });
+
+app.use("/user", validate, userRoutes);
