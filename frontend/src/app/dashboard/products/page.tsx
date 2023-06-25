@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FiPlus } from "react-icons/fi";
-import { potteryProducts } from "@/utils/util";
+import { potteryProducts, serverURL } from "@/utils/util";
+import axios from "axios";
 
 export default function Products() {
 	const modalRef = useRef(null);
@@ -21,6 +22,28 @@ export default function Products() {
 
 	// 	// Close the modal
 	// };
+
+	const [businessData, setBusinessData] = useState<any>({ name: "" });
+
+    const getBusiness = async () => {
+        const config = {
+            method: "GET",
+            url: `${serverURL}/business`,
+            headers: {
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
+            },
+        };
+
+        axios(config).then((response) => {
+            setBusinessData(response.data);
+        }).catch((error) => {
+            console.log(error);
+        });
+    };
+
+    useEffect(() => {
+        getBusiness();
+    }, []);
 
 	const createProduct = ()=>{
 		
