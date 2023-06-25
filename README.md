@@ -26,3 +26,5 @@ Zapspace also understands the significance of data-driven decision-making and pr
 
 
 In summary, Zapspace is a multifaceted platform that combines website creation, marketplace functionality, automated social media presence, educational resources, and analytics to empower small local businesses in establishing and growing their online presence.
+
+[PRESENTATION](https://www.canva.com/design/DAFmuPYkat0/shs3sTOVtS4pAmZujVdiug/edit?utm_content=DAFmuPYkat0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
