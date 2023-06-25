@@ -223,12 +223,12 @@ export default function Home() {
             </div>
         </main> : ""}
         {/* Onboarding */}
-        {showOnboarding || showLogin || showSignUp ? "" : <div className="hero min-h-[90vh] bg-base-200">
+        {showOnboarding || showLogin || showSignUp ? "" : <div style={{background: businessData.name ? `url("${businessCategories[businessData?.category].bgImage}")` : "white"}} className="hero min-h-[90vh]">
             <div className="hero-content flex-col lg:flex-row">
                 <img src="https://static.vecteezy.com/system/resources/previews/011/997/009/non_2x/online-shop-3d-icon-illustration-for-your-website-user-interface-and-presentation-3d-render-illustration-free-png.png" className="max-w-sm rounded-lg shadow-2xl" />
                 <div>
-                    <h1 className="text-5xl font-bold">{businessData.name ? `Welcome ${businessData.name}!` :"Start a business in minutes!"}</h1>
-                    <p className="py-6">Turn your dreams into reality with Zapspace - the fastest and easiest way to start and launch your own business in just minutes.</p>
+                    <h1 className="text-5xl font-bold">{businessData.name ? `Welcome ${businessData.name}!` : "Start a business in minutes!"}</h1>
+                    <p className="py-6">{businessData.name ? "Take control of your business with ease - visit your personalized dashboard on our platform to effortlessly manage and monitor your products, sales, and more, all in one convenient place." : "Turn your dreams into reality with Zapspace - the fastest and easiest way to start and launch your own business in just minutes."}</p>
                     <button className="btn btn-primary" onClick={() => {
                         if (businessData.name) {
                             window.location.href = "/dashboard";
