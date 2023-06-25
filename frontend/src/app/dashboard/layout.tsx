@@ -4,7 +4,8 @@ import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FiStar, FiChevronDown, FiShoppingCart, FiSettings, FiHome, FiBook, FiPieChart, FiUsers, FiShoppingBag } from "react-icons/fi";
+import { FiStar, FiChevronDown, FiShoppingCart, FiSettings, FiHome, FiBook, FiPieChart, FiUsers, FiShoppingBag, FiMessageSquare } from "react-icons/fi";
+import PremiumButton from "./components/PremiumButton";
 
 export default function Dashboard({
     children,
@@ -57,17 +58,16 @@ export default function Dashboard({
                 <Link href={"/dashboard/blog"}><button className="flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"><FiBook /> Blog</button></Link>
                 <Link href={"/dashboard/analytics"}><button className="flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"><FiPieChart /> Analytics</button></Link>
                 <Link href={"/dashboard/social"}><button className="flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"><FiUsers /> Social</button></Link>
+                <Link href={"/dashboard/chats"}><button className="flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"><FiMessageSquare /> Chat & Support</button></Link>
                 <Link href={"/dashboard/settings"}><button className="flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"><FiSettings /> Settings</button></Link>
             </div>
         </div>
         <main className="p-4 w-full">
             {children}
             {businessData.name ? <div className="flex w-full justify-between absolute bottom-0 left-0">
-                <Image src={businessData?.category !== -1 ? businessCategories[businessData.category]?.image : "https://cdn3d.iconscout.com/3d/premium/thumb/shopping-store-5130510-4292743.png"} alt="icon" width={200} height={200} />
+                <Image src={businessData?.category !== -1 ? businessCategories[businessData.category]?.image : "https://cdn3d.iconscout.com/3d/premium/thumb/shopping-store-5130510-4292743.png"} alt="icon" width={150} height={150} />
             </div> : ""}
-            <div className="absolute bottom-[10px] right-[10px] justify-end">
-                <button className="btn btn-primary"><FiStar className="text-black" />PREMIUM</button>
-            </div>
+            <PremiumButton/>
         </main>
     </div>;
 }

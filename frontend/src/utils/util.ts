@@ -16,11 +16,12 @@ const potteryProducts = [
 	{
 		name: "Koban Raku Art Pottery Vase",
 		image: "https://i.etsystatic.com/29276225/c/3000/3000/0/0/il/e7463d/3486308746/il_600x600.3486308746_hr4m.jpg",
-		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+		description:
+			"Handmade Ceramic Home Decor - KOBAN Raku Art Pottery Vase",
 		price: "2757",
 	},
 	{
-		name: "KItalian Ceramic Art Pottery Jar",
+		name: "Italian Ceramic Art Pottery Jar",
 		image: "https://i.etsystatic.com/11256618/r/il/7e1b83/4256352767/il_600x600.4256352767_znbc.jpg",
 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		price: "7889",
@@ -63,6 +64,99 @@ const potteryProducts = [
 	},
 ];
 
+const orders = [
+	{
+		product: {
+			name: "Large Ceramic Mug",
+			image: "https://i.etsystatic.com/36516242/r/il/4a4038/4040270611/il_600x600.4040270611_3n74.jpg",
+		},
+		order: 12,
+		price: "23,000",
+		address: "4/113, E C Road, Neelankarai, Chennai, IN",
+		date: "06 April 2023",
+	},
+	{
+		product: {
+			name: "Black Gazed Mojave Stoneware Ceramic Mug",
+			image: "https://i.etsystatic.com/29447291/r/il/37872a/3312509035/il_600x600.3312509035_a87g.jpg",
+		},
+		order: 10,
+		price: "14010",
+		address: "Bengaluru, Karnataka, IN",
+		date: "10 May 2023",
+	},
+	{
+		product: {
+			name: "Fern Mug",
+			image: "https://i.etsystatic.com/6720393/c/750/750/157/0/il/e5bb6d/2252166340/il_600x600.2252166340_ofnl.jpg",
+		},
+		order: 10,
+		price: "15353",
+		address: "4/113, E C Road, Neelankarai, Chennai, IN",
+		date: "06 April 2023",
+	},
+	{
+		product: {
+			name: "Orange Drop Unique Minimalistic Coffee Cup",
+			image: "https://i.etsystatic.com/38257618/r/il/39395e/4934658034/il_600x600.4934658034_edhh.jpg",
+		},
+		order: 10,
+		price: "12344",
+		address: "Bengaluru, Karnataka, IN",
+		date: "10 May 2023",
+	},
+	{
+		product: {
+			name: "Black Gazed Mojave Stoneware Ceramic Mug",
+			image: "https://i.etsystatic.com/29447291/r/il/37872a/3312509035/il_600x600.3312509035_a87g.jpg",
+		},
+		order: 10,
+		price: "14010",
+		address: "4/113, E C Road, Neelankarai, Chennai, IN",
+		date: "06 April 2023",
+	},
+	{
+		product: {
+			name: "Orange Drop Unique Minimalistic Coffee Cup",
+			image: "https://i.etsystatic.com/38257618/r/il/39395e/4934658034/il_600x600.4934658034_edhh.jpg",
+		},
+		order: 10,
+		price: "12344",
+		address: "Bengaluru, Karnataka, IN",
+		date: "10 May 2023",
+	},
+	{
+		product: {
+			name: "Large Ceramic Mug",
+			image: "https://i.etsystatic.com/36516242/r/il/4a4038/4040270611/il_600x600.4040270611_3n74.jpg",
+		},
+		order: 12,
+		price: "23,000",
+		address: "4/113, E C Road, Neelankarai, Chennai, IN",
+		date: "06 April 2023",
+	},
+	{
+		product: {
+			name: "Black Gazed Mojave Stoneware Ceramic Mug",
+			image: "https://i.etsystatic.com/29447291/r/il/37872a/3312509035/il_600x600.3312509035_a87g.jpg",
+		},
+		order: 10,
+		price: "14010",
+		address: "Bengaluru, Karnataka, IN",
+		date: "10 May 2023",
+	},
+	{
+		product: {
+			name: "Fern Mug",
+			image: "https://i.etsystatic.com/6720393/c/750/750/157/0/il/e5bb6d/2252166340/il_600x600.2252166340_ofnl.jpg",
+		},
+		order: 10,
+		price: "15353",
+		address: "4/113, E C Road, Neelankarai, Chennai, IN",
+		date: "06 April 2023",
+	},
+];
+
 const businessCategories = [
 	{
 		category: "Cool Drinks",
@@ -101,4 +195,4 @@ const businessCategories = [
 	},
 ];
 
-export { serverURL, onboardingMessages, businessCategories };
+export { serverURL, onboardingMessages, businessCategories, potteryProducts, orders };
