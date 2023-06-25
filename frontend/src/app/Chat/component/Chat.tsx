@@ -8,7 +8,7 @@ export default function Chat({ onClose }: ChatProps) {
     return (
         <div className="w-1/5 h-[600px] flex flex-col justify-between  mr-2 z-10 absolute right-0 bottom-20 bg-neutral-100 shadow-lg shadow-slate-300 rounded-lg ">
             <div className="bg-neutral-200 p-3 rounded-t-md flex justify-between">
-                <h4 className="text-xl font-bold text-black">Chat</h4>
+                <h4 className="text-xl font-bold text-black">Chat with seller</h4>
                 <button onClick={onClose}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-auto text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round"
