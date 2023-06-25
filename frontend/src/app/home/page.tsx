@@ -222,7 +222,18 @@ export default function Home() {
             </div>
         </main> : ""}
         {/* Onboarding */}
-        <main className="w-full h-full flex flex-col justify-center items-center">
+        <div className="hero min-h-[90vh] bg-base-200">
+            <div className="hero-content flex-col lg:flex-row">
+                <img src="https://static.vecteezy.com/system/resources/previews/011/997/009/non_2x/online-shop-3d-icon-illustration-for-your-website-user-interface-and-presentation-3d-render-illustration-free-png.png" className="max-w-sm rounded-lg shadow-2xl" />
+                <div>
+                    <h1 className="text-5xl font-bold">Start a business in minutes!</h1>
+                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <button className="btn btn-primary">Get Started</button>
+                </div>
+            </div>
+        </div>
+        {/* <main className="w-full h-full flex flex-col justify-center items-center">
+            
             <p className="text-2xl font-semibold">{businessData.name ? `Welcome ${businessData.name}!` : "Start your business in a few clicks"}</p>
             <button onClick={() => {
                 if (businessData.name) {
@@ -239,8 +250,11 @@ export default function Home() {
             {businessData.name ? <div className="flex w-full justify-between absolute bottom-0 left-0">
                 <Image src={businessData?.category !== -1 ? businessCategories[businessData.category]?.image : "https://cdn3d.iconscout.com/3d/premium/thumb/shopping-store-5130510-4292743.png"} alt="icon" width={250} height={250} />
                 <div style={{ background: businessData?.category !== -1 ? businessCategories[businessData.category]?.color : "#DDC12D" }} className="absolute right-[-80px] bottom-[-80px] rounded-full w-[250px] h-[250px]"></div>
-            </div> : ""}
-        </main>
+            </div> : <div className="flex w-full justify-between absolute bottom-0 left-0">
+                <img src={"https://static.vecteezy.com/system/resources/previews/011/997/009/non_2x/online-shop-3d-icon-illustration-for-your-website-user-interface-and-presentation-3d-render-illustration-free-png.png"} alt="icon" width={250} height={250} />
+                <div style={{ background: businessData?.category !== -1 ? businessCategories[businessData.category]?.color : "#DDC12D" }} className="absolute right-[-80px] bottom-[-80px] rounded-full w-[250px] h-[250px]"></div>
+            </div>}
+        </main> */}
         <ToastContainer />
     </div>;
 }
