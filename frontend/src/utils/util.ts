@@ -160,7 +160,7 @@ const orders = [
 const businessCategories = [
 	{
 		category: "Cool Drinks",
-		color: "#FFCC00",
+		color: "#CF8F19",
 		image: "https://static.vecteezy.com/system/resources/previews/011/619/421/original/wine-bottle-3d-render-icon-illustration-png.png",
 		bgImage:
 			"https://images.unsplash.com/photo-1462887749044-b47cb05b83b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",

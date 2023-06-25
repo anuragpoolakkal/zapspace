@@ -1,49 +1,16 @@
 "use client";
-import { businessCategories, potteryProducts, serverURL } from "@/utils/util";
+import { potteryProducts } from "@/utils/util";
 import Image from "next/image";
 import { FiMessageSquare, FiShoppingCart } from "react-icons/fi"
 import Chat from '@/app/Chat/component/Chat';
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
 
-type Params = {
-    params: {
-        businessName: string
-    }
-}
-
-export default function ProductListingPage({ params: { businessName } }: Params) {
-    const [businessData, setBusinessData] = useState<any>({ name: "" });
+export default function ProductListingPage() {
     const [closeChat, setCloseChat] = useState(false);
-    const getBusiness = async () => {
-        const config = {
-            method: "POST",
-            url: `${serverURL}/business/by-id`,
-            headers: {
-                "Authorization": `Bearer ${localStorage.getItem("token")}`,
-                "Content-Type": "application/json"
-            },
-            data: {
-                businessId: businessName
-            },
-        };
 
-        axios(config).then((response) => {
-            setBusinessData(response.data);
-        }).catch((error) => {
-            console.log(error);
-        });
-    };
-
-    useEffect(() => { getBusiness() }, [])
     return (
         <div>
-             <div className="navbar" style={{ background: businessData?.category !== -1 ? businessCategories[businessData.category]?.color : "#DDC12D" }}>
-            <div className="flex w-full justify-between">
-                <a className="btn btn-ghost normal-case text-xl" onClick={() => window.location.href = `/p/${businessName}/site`}>{businessData?.name}</a>
-                <a className="btn btn-ghost normal-case text-xl" onClick={() => window.location.href = `/p/${businessName}/cart`}><FiShoppingCart /></a>
-            </div>
-        </div>
+            
             <div className="flex justify-between relative">
                 <div className="text-black flex items-center gap-x-3 p-3">
                     <h2 className="font-semibold text-xl">Filters</h2>
