@@ -162,37 +162,44 @@ const businessCategories = [
 		category: "Cool Drinks",
 		color: "#FFCC00",
 		image: "https://static.vecteezy.com/system/resources/previews/011/619/421/original/wine-bottle-3d-render-icon-illustration-png.png",
+		bgImage: "https://unsplash.com/photos/VEjN2jMxf0A",
 	},
 	{
 		category: "Food Industry",
 		color: "#FF0000",
 		image: "https://cdn3d.iconscout.com/3d/premium/thumb/food-and-drink-5727926-4800418.png",
+		bgImage: "https://unsplash.com/photos/R3LcfTvcGWY",
 	},
 	{
 		category: "Handmade Crafts",
 		color: "#FF99CC",
 		image: "https://cdn3d.iconscout.com/3d/premium/thumb/crafting-6625182-5522772.png?f=webp",
+		bgImage: "https://unsplash.com/photos/9yPQysGoE9I",
 	},
 	{
 		category: "Home Decor Crafts",
 		color: "#66CCFF",
 		image: "https://cdn3d.iconscout.com/3d/premium/thumb/home-6546378-5376641.png",
+		bgImage: "https://unsplash.com/photos/1FilXQqn9L4",
 	},
 	{
 		category: "Plants",
 		color: "#459544",
 		image: "https://static.vecteezy.com/system/resources/previews/021/445/732/original/monstera-in-a-pot-tropical-plant-for-interior-decor-of-home-or-office-3d-icon-cartoon-style-rendering-illustration-png.png",
+		bgImage: "https://unsplash.com/photos/bBiuSdck8tU",
 	},
 	{
 		category: "Pottery",
 		color: "#8B4513",
 		image: "https://cdn-icons-png.flaticon.com/512/2448/2448364.png",
+		bgImage: "https://unsplash.com/photos/w46tRF64qNc",
 	},
 	{
 		category: "Textile Art",
 		color: "#FF66CC",
 		image: "https://cdn3d.iconscout.com/3d/premium/thumb/fabric-8832447-7192376.png",
+		bgImage: "https://unsplash.com/photos/BPWZ01FtySg",
 	},
 ];
 
-export { serverURL, onboardingMessages, businessCategories, potteryProducts, orders };
+export { serverURL, onboardingMessages, businessCategories, potteryProducts };
