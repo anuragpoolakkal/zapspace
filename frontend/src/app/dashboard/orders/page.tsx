@@ -1,4 +1,5 @@
 "use client";
+import { orders } from "@/utils/util";
 import Image from "next/image";
 import { useRef } from "react";
 import { FiPlus } from "react-icons/fi";
@@ -7,15 +8,17 @@ export default function Orders() {
     const modalRef = useRef(null);
 
     return <div className="flex flex-col text-black w-full">
-        <p className="text-2xl font-semibold mb-4">Orders</p>
+        <p className="flex text-2xl font-semibold mb-4">Orders <div className="flex">
+            <p className="ml-3 text-lg flex items-center justify-center text-center bg-black text-white font-semibold rounded-md w-fit p-1">{orders.length}</p>
+        </div></p>
         <main className="overflow-y-scroll h-[85vh]">
-            {[1, 1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 1].map((item, index) => {
+            {orders.map((item:any, index:number) => {
                 return <div className="flex bg-gray-100 rounded-lg m-3 p-3">
-                    <Image src={"https://static.toiimg.com/thumb/imgsize-23456,msid-88137086,width-600,resizemode-4/88137086.jpg"} width={200} height={200} alt="hello" />
+                    <img src={item?.product?.image} width={200} height={200} alt="hello" />
                     <div className="flex flex-col justify-center ml-5">
-                        <p className="text-lg font-semibold">Order</p>
-                        <p>Elegant pot home made pot good pot.</p>
-                        <p className="mt-3">₹ 250</p>
+                        <p className="text-lg font-semibold">{item?.product?.name}</p>
+                        <p className="mt-3">Orders: {item?.order}</p>
+                        <p className="mt-3">₹ {item?.price}</p>
                     </div>
                 </div>
             })}
@@ -23,7 +26,7 @@ export default function Orders() {
         {/* Open the modal using ID.showModal() method */}
         <dialog id="my_modal_1" ref={modalRef} className="modal">
             <form method="dialog" className="modal-box">
-            <h3 className="font-bold text-lg mb-3">New Product</h3>
+                <h3 className="font-bold text-lg mb-3">New Product</h3>
                 <input type="file" placeholder="Product Image" multiple className="mb-4 input input-bordered w-full max-w-xs" />
                 <input type="text" placeholder="Name" className="mb-4 input input-bordered w-full max-w-xs" />
                 <input type="text" placeholder="Description" className="mb-4 input input-bordered w-full max-w-xs" />

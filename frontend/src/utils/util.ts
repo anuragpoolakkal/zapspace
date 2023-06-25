@@ -84,6 +84,7 @@ const orders = [
 		price: "14010",
 		address: "Bengaluru, Karnataka, IN",
 		date: "10 May 2023",
+	},
 	{
 		product: {
 			name: "Fern Mug",
@@ -194,4 +195,4 @@ const businessCategories = [
 	},
 ];
 
-export { serverURL, onboardingMessages, businessCategories, potteryProducts };
+export { serverURL, onboardingMessages, businessCategories, potteryProducts, orders };
