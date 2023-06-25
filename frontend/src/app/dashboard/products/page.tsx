@@ -9,6 +9,7 @@ import axios from "axios";
 export default function Products() {
 	const modalRef = useRef(null);
 	const fileInputRef = useRef(null);
+	const [business, setBusiness] = useState<any>({});
 
 	// const handleAddProduct = (event : Chan) => {
 	// 	event.preventDefault(); 
@@ -23,31 +24,62 @@ export default function Products() {
 	// 	// Close the modal
 	// };
 
-	const [businessData, setBusinessData] = useState<any>({ name: "" });
 
-    const getBusiness = async () => {
-        const config = {
-            method: "GET",
-            url: `${serverURL}/business`,
-            headers: {
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
-            },
-        };
+	const getBusiness = async () => {
+		const config = {
+			method: "GET",
+			url: `${serverURL}/business`,
+			headers: {
+				"Authorization": `Bearer ${localStorage.getItem("token")}`
+			},
+		};
 
-        axios(config).then((response) => {
-            setBusinessData(response.data);
-        }).catch((error) => {
-            console.log(error);
-        });
-    };
-
-    useEffect(() => {
-        getBusiness();
-    }, []);
-
-	const createProduct = ()=>{
-		
+		axios(config).then((response) => {
+			console.log(response.data);
+		}).catch((error) => {
+			console.log(error);
+		});
 	};
+
+	useEffect(() => {
+		getBusiness();
+	}, []);
+
+	const createProduct = () => {
+
+	};
+
+
+	const handleAddProduct = async (event) => {
+		event.preventDefault();
+		const formData = new FormData();
+		const files = fileInputRef.current.files;
+		const name = event.target.elements.name.value;
+		const description = event.target.elements.description.value;
+		const price = event.target.elements.price.value;
+		const stock = event.target.elements.stock.value;
+
+		formData.append("name", name);
+		formData.append("description", description);
+		formData.append("price", price);
+		formData.append("stock", stock);
+		for (let i = 0; i < files.length; i++) {
+			formData.append("images", files[i]);
+		}
+		console.log(formData.getAll("images"));
+
+		try {
+			const response = await axios.post(`${serverURL}/upload`, formData);
+			console.log(response.data);
+		} catch (error) {
+			console.error(error);
+		}
+
+		if (modalRef.current) {
+			modalRef.current.close();
+		}
+	};
+
 
 	return (
 		<div className="flex flex-col text-black w-full">
@@ -84,7 +116,7 @@ export default function Products() {
 					<form
 						method="dialog"
 						className="modal-box"
-						// onSubmit={handleAddProduct}
+						onSubmit={handleAddProduct}
 					>
 						<h3 className="font-bold text-lg mb-3">New Product</h3>
 						<input
@@ -93,7 +125,7 @@ export default function Products() {
 							multiple
 							className="mb-4 input input-bordered w-full max-w-xs"
 							ref={fileInputRef}
-							onChange={(x)=>{}}
+							onChange={(x) => { }}
 						/>
 						<input
 							type="text"
@@ -122,7 +154,7 @@ export default function Products() {
 						<div className="modal-action">
 							{/* if there is a button in form, it will close the modal */}
 							<button className="btn">Cancel</button>
-							<button onClick={()=>createProduct()} type="submit" className="btn btn-primary">
+							<button onClick={() => createProduct()} type="submit" className="btn btn-primary">
 								Add
 							</button>
 						</div>
