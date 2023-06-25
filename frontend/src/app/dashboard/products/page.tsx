@@ -13,7 +13,7 @@ export default function Products() {
         </div>
         <main className="overflow-y-scroll h-[80vh]">
             {[1, 1, 1, 1, 11, 1, 1, 1, 1, 1, 1, 1, 1].map((item, index) => {
-                return <div className="flex bg-gray-100 rounded-lg m-3 p-3">
+                return <div key={index} className="flex bg-gray-100 rounded-lg m-3 p-3">
                     <Image src={"https://static.toiimg.com/thumb/imgsize-23456,msid-88137086,width-600,resizemode-4/88137086.jpg"} width={200} height={200} alt="hello" />
                     <div className="flex flex-col justify-center ml-5">
                         <p className="text-lg font-semibold">Product Name</p>
@@ -26,7 +26,7 @@ export default function Products() {
         {/* Open the modal using ID.showModal() method */}
         <dialog id="my_modal_1" ref={modalRef} className="modal">
             <form method="dialog" className="modal-box">
-            <h3 className="font-bold text-lg mb-3">New Product</h3>
+                <h3 className="font-bold text-lg mb-3">New Product</h3>
                 <input type="file" placeholder="Product Image" multiple className="mb-4 input input-bordered w-full max-w-xs" />
                 <input type="text" placeholder="Name" className="mb-4 input input-bordered w-full max-w-xs" />
                 <input type="text" placeholder="Description" className="mb-4 input input-bordered w-full max-w-xs" />

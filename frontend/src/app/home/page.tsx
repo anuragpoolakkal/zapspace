@@ -81,7 +81,8 @@ export default function Home() {
             method: "GET",
             url: `${serverURL}/business`,
             headers: {
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
+                Authorization: `Bearer ${typeof localStorage !== "undefined" && localStorage.getItem("token")
+                }`,
             },
         };
 
@@ -128,7 +129,7 @@ export default function Home() {
             <p className="text-lg font-bold">Zapspace</p>
             {localStorage.getItem("user") ? <div className="flex items-center"><FiUser onClick={() => {
                 localStorage.clear();
-                window.location.reload()
+                window.location.reload();
             }} className="cursor-pointer text-2xl mr-2" /><p>{JSON.parse(localStorage.getItem("user")!).name}</p></div> : <button onClick={() => setShowLogin(true)} className="btn btn-primary">Login</button>}
         </nav>
         {/* SignUp */}
@@ -199,7 +200,7 @@ export default function Home() {
                                 <option value={-1} disabled selected>Business Category</option>
                                 {
                                     businessCategories.map((category, index) => {
-                                        return <option value={index}>{category.category}</option>
+                                        return <option key={index} value={index}>{category.category}</option>
                                     })
                                 }
                             </select>}

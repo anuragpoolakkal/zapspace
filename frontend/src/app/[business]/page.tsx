@@ -19,13 +19,13 @@ export default function ProductListingPage() {
                     </div>
                 </div>
             </div>
-            <div className="w-full h-[80vh] flex flex-wrap overflow-y-auto pt-5">
+            <div className="w-full h-[80vh] flex flex-wrap overflow-y-auto  pt-5">
                 {[...Array(10)].map((item, index) => {
-                    return <div className="md:w-72 m-5 bg-base-100 text-black cursor-pointer hover:scale-105" style={{transition: "0.1s"}}>
-                        <figure><img className="w-full rounded-lg" src="https://www.nestlehealthscience.com/sites/g/files/dnigna366/files/asset-library/PublishingImages/recipes/BOOST/BOOST_CocoaCream.jpg" alt="Achaar" width={200} height={200} /></figure>
+                    return <div key={index} className="md:w-72 m-5 bg-base-100 text-black cursor-pointer hover:scale-105" style={{ transition: "0.1s" }}>
+                        <figure><Image className="w-full rounded-lg" src="https://www.nestlehealthscience.com/sites/g/files/dnigna366/files/asset-library/PublishingImages/recipes/BOOST/BOOST_CocoaCream.jpg" alt="Achaar" width={200} height={200} /></figure>
                         <div className="mt-2">
                             <h2 className="text-md font-semibold">Boost Cocoa & Cream</h2>
-                            <p  className="text-md">₹ 250</p>
+                            <p className="text-md">₹ 250</p>
                         </div>
                     </div>
                 })}

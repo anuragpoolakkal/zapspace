@@ -23,7 +23,7 @@ export default function Orders() {
         {/* Open the modal using ID.showModal() method */}
         <dialog id="my_modal_1" ref={modalRef} className="modal">
             <form method="dialog" className="modal-box">
-            <h3 className="font-bold text-lg mb-3">New Product</h3>
+                <h3 className="font-bold text-lg mb-3">New Product</h3>
                 <input type="file" placeholder="Product Image" multiple className="mb-4 input input-bordered w-full max-w-xs" />
                 <input type="text" placeholder="Name" className="mb-4 input input-bordered w-full max-w-xs" />
                 <input type="text" placeholder="Description" className="mb-4 input input-bordered w-full max-w-xs" />
