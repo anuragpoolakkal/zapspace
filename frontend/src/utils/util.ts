@@ -209,4 +209,4 @@ const businessCategories = [
 	},
 ];
 
-export { serverURL, onboardingMessages, businessCategories, potteryProducts };
+export { serverURL, onboardingMessages, businessCategories, potteryProducts, orders };

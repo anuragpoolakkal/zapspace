@@ -9,10 +9,10 @@ export default function Orders() {
 
     return <div className="flex flex-col text-black w-full">
         <p className="flex text-2xl font-semibold mb-4">Orders <div className="flex">
-            <p className="ml-3 text-lg flex items-center justify-center text-center bg-black text-white font-semibold rounded-md w-fit p-1">{orders.length}</p>
+            <p className="ml-3 text-lg flex items-center justify-center text-center bg-black text-white font-semibold rounded-md w-fit p-1">{orders?.length}</p>
         </div></p>
         <main className="overflow-y-scroll h-[85vh]">
-            {orders.map((item:any, index:number) => {
+            {orders?.map((item:any, index:number) => {
                 return <div className="flex bg-gray-100 rounded-lg m-3 p-3">
                     <img src={item?.product?.image} width={200} height={200} alt="hello" />
                     <div className="flex flex-col justify-center ml-5">

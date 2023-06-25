@@ -22,6 +22,10 @@ export default function Products() {
 	// 	// Close the modal
 	// };
 
+	const createProduct = ()=>{
+		
+	};
+
 	return (
 		<div className="flex flex-col text-black w-full">
 			<p className="text-2xl font-semibold mb-4">Products</p>
@@ -66,6 +70,7 @@ export default function Products() {
 							multiple
 							className="mb-4 input input-bordered w-full max-w-xs"
 							ref={fileInputRef}
+							onChange={(x)=>{}}
 						/>
 						<input
 							type="text"
@@ -94,7 +99,7 @@ export default function Products() {
 						<div className="modal-action">
 							{/* if there is a button in form, it will close the modal */}
 							<button className="btn">Cancel</button>
-							<button type="submit" className="btn btn-primary">
+							<button onClick={()=>createProduct()} type="submit" className="btn btn-primary">
 								Add
 							</button>
 						</div>
