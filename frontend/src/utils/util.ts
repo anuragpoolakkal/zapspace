@@ -72,6 +72,8 @@ const orders = [
 		},
 		order: 12,
 		price: "23,000",
+		address: "4/113, E C Road, Neelankarai, Chennai, IN",
+		date: "06 April 2023",
 	},
 	{
 		product: {
@@ -80,7 +82,8 @@ const orders = [
 		},
 		order: 10,
 		price: "14010",
-	},
+		address: "Bengaluru, Karnataka, IN",
+		date: "10 May 2023",
 	{
 		product: {
 			name: "Fern Mug",
@@ -88,6 +91,8 @@ const orders = [
 		},
 		order: 10,
 		price: "15353",
+		address: "4/113, E C Road, Neelankarai, Chennai, IN",
+		date: "06 April 2023",
 	},
 	{
 		product: {
@@ -96,6 +101,8 @@ const orders = [
 		},
 		order: 10,
 		price: "12344",
+		address: "Bengaluru, Karnataka, IN",
+		date: "10 May 2023",
 	},
 	{
 		product: {
@@ -104,6 +111,8 @@ const orders = [
 		},
 		order: 10,
 		price: "14010",
+		address: "4/113, E C Road, Neelankarai, Chennai, IN",
+		date: "06 April 2023",
 	},
 	{
 		product: {
@@ -112,6 +121,8 @@ const orders = [
 		},
 		order: 10,
 		price: "12344",
+		address: "Bengaluru, Karnataka, IN",
+		date: "10 May 2023",
 	},
 	{
 		product: {
@@ -120,6 +131,8 @@ const orders = [
 		},
 		order: 12,
 		price: "23,000",
+		address: "4/113, E C Road, Neelankarai, Chennai, IN",
+		date: "06 April 2023",
 	},
 	{
 		product: {
@@ -128,6 +141,8 @@ const orders = [
 		},
 		order: 10,
 		price: "14010",
+		address: "Bengaluru, Karnataka, IN",
+		date: "10 May 2023",
 	},
 	{
 		product: {
@@ -136,6 +151,8 @@ const orders = [
 		},
 		order: 10,
 		price: "15353",
+		address: "4/113, E C Road, Neelankarai, Chennai, IN",
+		date: "06 April 2023",
 	},
 ];
 
