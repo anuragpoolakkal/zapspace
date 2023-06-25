@@ -32,7 +32,10 @@ export default function Dashboard() {
         <div className="w-full flex flex-col stats shadow mt-4 p-4 mr-4">
             <p className="flex items-center"><FiGlobe className="mr-1" /> WEBSITE</p>
             <div className="flex items-center">
-                <p className="text-2xl font-semibold">{businessData?.name}</p>
+                <div className="flex flex-col">
+                    <p className="text-2xl font-semibold">{businessData?.name}</p>
+                    <p className="text-sm text-gray-500 font-semibold">zapspace.com/p/{businessData?.businessId}</p>
+                </div>
                 <button className="ml-3 btn" onClick={() => { window.open(`/p/${businessData?.businessId}/site`) }}><FiExternalLink /><p>View</p></button>
             </div>
         </div>
@@ -71,7 +74,7 @@ export default function Dashboard() {
                 <div className="flex">
                     <h2 className="card-title mr-2">Blog</h2>
                     <div className="flex">
-                    <p className="text-xs bg-green-600 text-white font-semibold rounded-md w-fit p-1">LATEST</p>
+                        <p className="text-xs bg-green-600 text-white font-semibold rounded-md w-fit p-1">LATEST</p>
                     </div>
                 </div>
                 <p>What's special about my coffee?</p>
