@@ -52,14 +52,15 @@ export default function Dashboard({
                 </div>
             </div>
             <div className="flex flex-col h-full bg-white rounded-lg p-[10px] mb-[10px]">
-                <Link href={"/dashboard"}><button className="flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"><FiHome /> Dashboard</button></Link>
-                <Link href={"/dashboard/products"}><button className="flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"><FiShoppingBag /> Products</button></Link>
-                <Link href={"/dashboard/orders"}><button className="flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"><FiShoppingCart /> Orders</button></Link>
-                <Link href={"/dashboard/blog"}><button className="flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"><FiBook /> Blog</button></Link>
-                <Link href={"/dashboard/analytics"}><button className="flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"><FiPieChart /> Analytics</button></Link>
-                <Link href={"/dashboard/social"}><button className="flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"><FiUsers /> Social</button></Link>
-                <Link href={"/dashboard/chats"}><button className="flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"><FiMessageSquare /> Chat & Support</button></Link>
-                <Link href={"/dashboard/settings"}><button className="flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"><FiSettings /> Settings</button></Link>
+                {window.location.href}
+                <Link href={"/dashboard"}><button className={"flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"}><FiHome /> Dashboard</button></Link>
+                <Link href={"/dashboard/products"}><button className={"flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"}><FiShoppingBag /> Products</button></Link>
+                <Link href={"/dashboard/orders"}><button className={"flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"}><FiShoppingCart /> Orders</button></Link>
+                <Link href={"/dashboard/blog"}><button className={"flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"}><FiBook /> Blog</button></Link>
+                <Link href={"/dashboard/analytics"}><button className={"flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"}><FiPieChart /> Analytics</button></Link>
+                <Link href={"/dashboard/social"}><button className={"flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"}><FiUsers /> Social</button></Link>
+                <Link href={"/dashboard/chats"}><button className={"flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"}><FiMessageSquare /> Chat & Support</button></Link>
+                <Link href={"/dashboard/settings"}><button className={"flex justify-start btn bg-white hover:bg-slate-100 mb-2 w-full"}><FiSettings /> Settings</button></Link>
             </div>
         </div>
         <main className="p-4 w-full">

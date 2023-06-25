@@ -124,7 +124,7 @@ export default function Home() {
     }, []);
 
     return <div className="flex w-screen h-screen bg-white flex-col text-black p-5">
-        <nav className="flex justify-between">
+        <nav className="flex justify-between mb-4">
             <p className="text-lg font-bold">Zapspace</p>
             {localStorage.getItem("user") ? <div className="flex items-center"><FiUser onClick={() => {
                 localStorage.clear();
@@ -222,12 +222,13 @@ export default function Home() {
             </div>
         </main> : ""}
         {/* Onboarding */}
-        {showOnboarding || showLogin || showSignUp ? "" : <div style={{background: businessData.name ? `url("${businessCategories[businessData?.category].bgImage}")` : "white"}} className="hero min-h-[90vh]">
+        {showOnboarding || showLogin || showSignUp ? "" : <div style={{ background: "black"}} className="rounded-2xl hero min-h-[80vh]">
+            <img style={{filter: "opacity(0.5)"}} src={businessData?.name ? `${businessCategories[businessData?.category].bgImage}")` : "https://images.unsplash.com/photo-1576500714954-8a687d0ea1ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"}/>
             <div className="hero-content flex-col lg:flex-row">
-                <img src="https://static.vecteezy.com/system/resources/previews/011/997/009/non_2x/online-shop-3d-icon-illustration-for-your-website-user-interface-and-presentation-3d-render-illustration-free-png.png" className="max-w-sm rounded-lg shadow-2xl" />
+                {businessData?.name ? <img width={250} src={businessData?.name ?  businessCategories[businessData?.category].image : "https://static.vecteezy.com/system/resources/previews/011/997/009/non_2x/online-shop-3d-icon-illustration-for-your-website-user-interface-and-presentation-3d-render-illustration-free-png.png"} className="max-w-sm rounded-lg shadow-2xl" /> : ""}
                 <div>
-                    <h1 className="text-5xl font-bold">{businessData.name ? `Welcome ${businessData.name}!` : "Start a business in minutes!"}</h1>
-                    <p className="py-6">{businessData.name ? "Take control of your business with ease - visit your personalized dashboard on our platform to effortlessly manage and monitor your products, sales, and more, all in one convenient place." : "Turn your dreams into reality with Zapspace - the fastest and easiest way to start and launch your own business in just minutes."}</p>
+                    <h1 className="text-5xl text-white font-bold">{businessData.name ? `Welcome ${businessData.name}!` : "Start a business in minutes!"}</h1>
+                    <p className="text-white py-6">{businessData.name ? "Take control of your business with ease - visit your personalized dashboard on our platform to effortlessly manage and monitor your products, sales, and more, all in one convenient place." : "Turn your dreams into reality with Zapspace - the fastest and easiest way to start and launch your own business in just minutes."}</p>
                     <button className="btn btn-primary" onClick={() => {
                         if (businessData.name) {
                             window.location.href = "/dashboard";
