@@ -8,40 +8,34 @@ import { potteryProducts } from "@/utils/util";
 export default function Products() {
 	const modalRef = useRef(null);
 	const fileInputRef = useRef(null);
-	const [isModalOpen, setIsModalOpen] = useState(false);
 
-	const handleNewProduct = () => {
-		setIsModalOpen(true);
-	};
+	// const handleAddProduct = (event : Chan) => {
+	// 	event.preventDefault(); 
+	// 	const files = fileInputRef.current.files;
+	// 	const name = event.target.elements.name.value;
+	// 	const description = event.target.elements.description.value;
+	// 	const price = event.target.elements.price.value;
+	// 	const stock = event.target.elements.stock.value;
 
-	const handleAddProduct = (event : Chan) => {
-		event.preventDefault(); 
-		const files = fileInputRef.current.files;
-		const name = event.target.elements.name.value;
-		const description = event.target.elements.description.value;
-		const price = event.target.elements.price.value;
-		const stock = event.target.elements.stock.value;
+	// 	// Process the new product data (e.g., send it to the server)
 
-		// Process the new product data (e.g., send it to the server)
-
-		// Close the modal
-		setIsModalOpen(false);
-	};
+	// 	// Close the modal
+	// };
 
 	return (
 		<div className="flex flex-col text-black w-full">
 			<p className="text-2xl font-semibold mb-4">Products</p>
 			<div className="flex">
-				<button className="btn mb-2" onClick={handleNewProduct}>
+				<button onClick={() => window.my_modal_1.showModal()} className="btn mb-2">
 					<FiPlus />
 					New Product
 				</button>
 			</div>
 			<main className="overflow-y-scroll h-[80vh]">
-				{potteryProducts.map((item) => (
+				{potteryProducts.map((item, index) => (
 					<div
 						className="flex bg-gray-100 rounded-lg m-3 p-3"
-						key={item.id}
+						key={index}
 					>
 						<Image
 							src={item.image}
@@ -58,12 +52,12 @@ export default function Products() {
 				))}
 			</main>
 			{/* Open the modal using ID.showModal() method */}
-			{isModalOpen && (
+			{(
 				<dialog id="my_modal_1" ref={modalRef} className="modal">
 					<form
 						method="dialog"
 						className="modal-box"
-						onSubmit={handleAddProduct}
+						// onSubmit={handleAddProduct}
 					>
 						<h3 className="font-bold text-lg mb-3">New Product</h3>
 						<input
