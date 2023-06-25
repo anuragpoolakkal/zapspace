@@ -27,7 +27,9 @@ export default function Blog() {
 					<div className="card-body">
 						<p className="text-sm">20 June 2023</p>
 						<div className="flex">
-							<h2 className="card-title mr-2">Checkout our latest collection!</h2>
+							<h2 className="card-title mr-2">
+								Checkout our latest collection!
+							</h2>
 						</div>
 						<div className="card-actions justify-end">
 							<button className="btn btn-primary">Edit</button>
@@ -39,7 +41,10 @@ export default function Blog() {
 						<div className="flex flex-col">
 							<p className="text-sm">20 June 2023</p>
 							<div className="flex">
-								<h2 className="card-title mr-2">Enchanting World of Botanical-Inspired Pottery</h2>
+								<h2 className="card-title mr-2">
+									Enchanting World of Botanical-Inspired
+									Pottery
+								</h2>
 							</div>
 						</div>
 						<div className="card-actions justify-end">

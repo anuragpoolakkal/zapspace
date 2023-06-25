@@ -1,9 +1,13 @@
 ![image](https://github.com/anuragrajanp/zapspace/assets/69390743/628c0a53-d660-4a4a-8761-cc83e5967a91)
 
 # Zapspace
+
+`BIT LORDS`
+
 All-in-one suite of digital tools for small local business owners within clicks
 
 ## What is Zapspace?
+
 ![image](https://github.com/anuragrajanp/zapspace/assets/69390743/ac38f17b-f3a1-404e-ad25-511d58c5faef)
 
 Zapspace is a comprehensive platform that empowers small local businesses to establish and enhance their online presence with ease. It is designed to provide a range of tools and features to support businesses in creating their space on the internet and driving growth in the digital realm.
@@ -23,7 +27,6 @@ Recognizing the importance of education and training, Zapspace offers resources 
 Zapspace also understands the significance of data-driven decision-making and provides analytics and insights to businesses. Through comprehensive metrics and reports, businesses can gain valuable insights into their website and marketplace performance, enabling them to make informed decisions and optimize their strategies.
 
 ![image](https://github.com/anuragrajanp/zapspace/assets/69390743/c98d6f9f-e664-4352-a771-3414710d04ee)
-
 
 In summary, Zapspace is a multifaceted platform that combines website creation, marketplace functionality, automated social media presence, educational resources, and analytics to empower small local businesses in establishing and growing their online presence.
 

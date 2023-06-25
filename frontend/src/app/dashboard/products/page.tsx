@@ -12,7 +12,7 @@ export default function Products() {
 	const [business, setBusiness] = useState<any>({});
 
 	// const handleAddProduct = (event : Chan) => {
-	// 	event.preventDefault(); 
+	// 	event.preventDefault();
 	// 	const files = fileInputRef.current.files;
 	// 	const name = event.target.elements.name.value;
 	// 	const description = event.target.elements.description.value;
@@ -24,31 +24,29 @@ export default function Products() {
 	// 	// Close the modal
 	// };
 
-
 	const getBusiness = async () => {
 		const config = {
 			method: "GET",
 			url: `${serverURL}/business`,
 			headers: {
-				"Authorization": `Bearer ${localStorage.getItem("token")}`
+				Authorization: `Bearer ${localStorage.getItem("token")}`,
 			},
 		};
 
-		axios(config).then((response) => {
-			console.log(response.data);
-		}).catch((error) => {
-			console.log(error);
-		});
+		axios(config)
+			.then((response) => {
+				console.log(response.data);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	};
 
 	useEffect(() => {
 		getBusiness();
 	}, []);
 
-	const createProduct = () => {
-
-	};
-
+	const createProduct = () => {};
 
 	// const handleAddProduct = async (event) => {
 	// 	event.preventDefault();
@@ -80,12 +78,14 @@ export default function Products() {
 	// 	}
 	// };
 
-
 	return (
 		<div className="flex flex-col text-black w-full">
 			<p className="text-2xl font-semibold mb-4">Products</p>
 			<div className="flex">
-				<button onClick={() => window.my_modal_3.showModal()} className="btn mb-2">
+				<button
+					onClick={() => window.my_modal_3.showModal()}
+					className="btn mb-2"
+				>
 					<FiPlus />
 					New Product
 				</button>
@@ -111,12 +111,9 @@ export default function Products() {
 				))}
 			</main>
 			{/* Open the modal using ID.showModal() method */}
-			{(
+			{
 				<dialog id="my_modal_3" ref={modalRef} className="modal">
-					<form
-						method="dialog"
-						className="modal-box"
-					>
+					<form method="dialog" className="modal-box">
 						<h3 className="font-bold text-lg mb-3">New Product</h3>
 						{/* <input
 							type="file"
@@ -126,7 +123,11 @@ export default function Products() {
 							ref={fileInputRef}
 							onChange={(x) => { }}
 						/> */}
-						<button className="btn btn-primary mb-4"><FiPlus/>Add Image</button><br/>
+						<button className="btn btn-primary mb-4">
+							<FiPlus />
+							Add Image
+						</button>
+						<br />
 						<input
 							type="text"
 							placeholder="Name"
@@ -154,13 +155,17 @@ export default function Products() {
 						<div className="modal-action">
 							{/* if there is a button in form, it will close the modal */}
 							<button className="btn">Cancel</button>
-							<button onClick={() => createProduct()} type="submit" className="btn btn-primary">
+							<button
+								onClick={() => createProduct()}
+								type="submit"
+								className="btn btn-primary"
+							>
 								Add
 							</button>
 						</div>
 					</form>
 				</dialog>
-			)}
+			}
 		</div>
 	);
 }
