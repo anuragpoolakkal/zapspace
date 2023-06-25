@@ -61,7 +61,7 @@ export default function ProductListingPage({ params: { businessName } }: Params)
             </div>
             <div className="w-full h-[80vh] flex flex-wrap overflow-y-auto pt-5">
                 {potteryProducts.map((item, index) => {
-                    return <div className="md:w-72 m-5 bg-base-100 text-black cursor-pointer hover:scale-105" style={{ transition: "0.1s" }}>
+                    return <div onClick={()=>window.location.href=`/p/${businessData?.businessId}/${index}`} className="md:w-72 m-5 bg-base-100 text-black cursor-pointer hover:scale-105" style={{ transition: "0.1s" }}>
                         <figure><img className="w-full rounded-lg" src={item?.image} alt="Achaar" width={200} height={200} /></figure>
                         <div className="mt-2">
                             <h2 className="text-md font-semibold">{item?.name}</h2>
