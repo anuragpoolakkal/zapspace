@@ -14,35 +14,19 @@ import {
 export default function Blog() {
 	return (
 		<div className="flex flex-col text-black">
-			<div className="w-full card card-bordered shadow-lg p-4 mr-4">
-				<p className="font-semibold text-lg mb-2">Analytics</p>
-				<div></div>
-				<div className="flex mt-3">
-					<div className="flex flex-col mr-10">
-						<div className="flex items-end">
-							<p className="text-lg font-semibold mr-2">₹</p>
-							<p className="text-4xl font-bold">832</p>
+			<p className="text-2xl font-semibold mb-4">Blogs</p>
+			<div></div>
+			<div className="card w-96 bg-base-100 shadow">
+				<div className="card-body">
+					<div className="flex">
+						<h2 className="card-title mr-2">Blog</h2>
+						<div className="flex">
+							<p className="text-xs bg-green-600 text-white font-semibold rounded-md w-fit p-1">LATEST</p>
 						</div>
-						<p>WEEKLY EARNINGS</p>
 					</div>
-					<div className="flex flex-col">
-						<div className="flex items-end">
-							<FiUsers />
-							<p className="ml-2 text-4xl font-bold">23</p>
-						</div>
-						<p>NEW CLIENTS</p>
-					</div>
-				</div>
-			</div>
-			<div className="w-full card card-bordered shadow-lg p-4">
-				<p className="font-semibold text-lg mb-2">Blog</p>
-				<div></div>
-				<div className="flex">
-					<div className="flex flex-col">
-						<div className="flex">LATEST</div>
-						<p className="text-lg font-semibold">
-							What's special about my pots?
-						</p>
+					<p>What's special about my coffee?</p>
+					<div className="card-actions justify-end">
+						<button className="btn btn-primary">Read</button>
 					</div>
 				</div>
 			</div>

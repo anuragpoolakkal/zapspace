@@ -1,7 +1,12 @@
+import { potteryProducts } from "@/utils/util";
 import Image from "next/image";
-
+import { FiMessageSquare, FiShoppingCart } from "react-icons/fi"
+import Chat from '@/app/Chat/component/Chat';
+import React, { useState, useEffect } from 'react';
 
 export default function ProductListingPage() {
+    const [closeChat, setCloseChat] = useState(false);
+
     return (
         <div>
             <div className="flex justify-between relative">
@@ -20,17 +25,24 @@ export default function ProductListingPage() {
                 </div>
             </div>
             <div className="w-full h-[80vh] flex flex-wrap overflow-y-auto pt-5">
-                {[...Array(10)].map((item, index) => {
+                {potteryProducts.map((item, index) => {
                     return <div className="md:w-72 m-5 bg-base-100 text-black cursor-pointer hover:scale-105" style={{transition: "0.1s"}}>
-                        <figure><img className="w-full rounded-lg" src="https://www.nestlehealthscience.com/sites/g/files/dnigna366/files/asset-library/PublishingImages/recipes/BOOST/BOOST_CocoaCream.jpg" alt="Achaar" width={200} height={200} /></figure>
+                        <figure><img className="w-full rounded-lg" src={item?.image} alt="Achaar" width={200} height={200} /></figure>
                         <div className="mt-2">
-                            <h2 className="text-md font-semibold">Boost Cocoa & Cream</h2>
-                            <p  className="text-md">₹ 250</p>
+                            <h2 className="text-md font-semibold">{item?.name}</h2>
+                            <p  className="text-md">₹ {item?.price}</p>
                         </div>
                     </div>
                 })}
             </div>
-            )
+            {!closeChat &&
+                <Chat onClose={
+                    () => {
+                        setCloseChat(true);
+                    }
+                } />
+            }
+            <button onClick={()=>setCloseChat(!closeChat)} className="absolute bottom-5 right-5 btn btn-primary"><FiMessageSquare className='mr-1' />CHAT</button>
         </div>
     )
 }

@@ -6,7 +6,7 @@ interface ChatProps {
 
 export default function Chat({ onClose }: ChatProps) {
     return (
-        <div className="w-1/5 h-[600px] flex flex-col justify-between  mr-2 z-10 absolute right-0 bg-neutral-100 shadow-xl shadow-slate-300 rounded-lg ">
+        <div className="w-1/5 h-[600px] flex flex-col justify-between  mr-2 z-10 absolute right-0 bottom-20 bg-neutral-100 shadow-lg shadow-slate-300 rounded-lg ">
             <div className="bg-neutral-200 p-3 rounded-t-md flex justify-between">
                 <h4 className="text-xl font-bold text-black">Chat</h4>
                 <button onClick={onClose}>
