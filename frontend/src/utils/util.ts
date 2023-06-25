@@ -162,43 +162,50 @@ const businessCategories = [
 		category: "Cool Drinks",
 		color: "#FFCC00",
 		image: "https://static.vecteezy.com/system/resources/previews/011/619/421/original/wine-bottle-3d-render-icon-illustration-png.png",
-		bgImage: "https://unsplash.com/photos/VEjN2jMxf0A",
+		bgImage:
+			"https://images.unsplash.com/photo-1462887749044-b47cb05b83b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
 	},
 	{
 		category: "Food Industry",
 		color: "#FF0000",
 		image: "https://cdn3d.iconscout.com/3d/premium/thumb/food-and-drink-5727926-4800418.png",
-		bgImage: "https://unsplash.com/photos/R3LcfTvcGWY",
+		bgImage:
+			"https://images.unsplash.com/photo-1447078806655-40579c2520d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
 	},
 	{
 		category: "Handmade Crafts",
 		color: "#FF99CC",
 		image: "https://cdn3d.iconscout.com/3d/premium/thumb/crafting-6625182-5522772.png?f=webp",
-		bgImage: "https://unsplash.com/photos/9yPQysGoE9I",
+		bgImage:
+			"https://images.unsplash.com/photo-1486129273931-27820249c615?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
 	},
 	{
 		category: "Home Decor Crafts",
 		color: "#66CCFF",
 		image: "https://cdn3d.iconscout.com/3d/premium/thumb/home-6546378-5376641.png",
-		bgImage: "https://unsplash.com/photos/1FilXQqn9L4",
+		bgImage:
+			"https://images.unsplash.com/photo-1512219279337-9746bab300f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80Qqn9L4",
 	},
 	{
 		category: "Plants",
 		color: "#459544",
 		image: "https://static.vecteezy.com/system/resources/previews/021/445/732/original/monstera-in-a-pot-tropical-plant-for-interior-decor-of-home-or-office-3d-icon-cartoon-style-rendering-illustration-png.png",
-		bgImage: "https://unsplash.com/photos/bBiuSdck8tU",
+		bgImage:
+			"https://images.unsplash.com/photo-1491147334573-44cbb4602074?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
 	},
 	{
 		category: "Pottery",
 		color: "#8B4513",
 		image: "https://cdn-icons-png.flaticon.com/512/2448/2448364.png",
-		bgImage: "https://unsplash.com/photos/w46tRF64qNc",
+		bgImage:
+			"https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1269&q=80",
 	},
 	{
 		category: "Textile Art",
 		color: "#FF66CC",
 		image: "https://cdn3d.iconscout.com/3d/premium/thumb/fabric-8832447-7192376.png",
-		bgImage: "https://unsplash.com/photos/BPWZ01FtySg",
+		bgImage:
+			"https://images.unsplash.com/photo-1577083165633-14ebcdb0f658?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=388&q=80",
 	},
 ];
 
