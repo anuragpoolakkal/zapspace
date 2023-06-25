@@ -4,7 +4,7 @@ import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FiStar, FiChevronDown, FiShoppingCart, FiSettings, FiHome, FiBook, FiPieChart, FiUsers, FiShoppingBag, FiMessageSquare } from "react-icons/fi";
+import { FiStar, FiChevronDown, FiShoppingCart, FiSettings, FiHome, FiBook, FiPieChart, FiUsers, FiShoppingBag, FiMessageSquare, FiUser } from "react-icons/fi";
 import PremiumButton from "./components/PremiumButton";
 import { usePathname } from "next/navigation";
 
@@ -45,7 +45,7 @@ export default function Dashboard({
                     </div> */}
                 <div className="avatar">
                     <div className="mask mask-squircle w-12 h-12 flex items-center justify-center bg-white" style={{ display: "flex" }}>
-                        <p>{businessData?.name.toString().toUpperCase()[0]}</p>
+                        <p><FiUser/></p>
                     </div>
                 </div>
                 <div className="w-full flex justify-between items-center pr-2">

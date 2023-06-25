@@ -2,7 +2,7 @@
 import { orders } from "@/utils/util";
 import Image from "next/image";
 import { useRef } from "react";
-import { FiMapPin, FiPhone, FiPlus } from "react-icons/fi";
+import { FiCheckCircle, FiMapPin, FiPhone, FiPlus } from "react-icons/fi";
 
 export default function Orders() {
     const modalRef = useRef(null);
@@ -21,7 +21,10 @@ export default function Orders() {
                         <p className="flex items-center mt-3"><FiMapPin className="mr-1"/> {item?.address}</p>
                         <p className="mt-3">Orders: {item?.order}</p>
                         <p className="mt-3 font-bold mb-4">₹ {item?.price}</p>
-                        <button onClick={()=>window.open("tel:+919961053621")} className="w-fit btn btn-primary"><FiPhone/> CONTACT</button>
+                        <div className="flex">
+                        <button onClick={()=>window.open("tel:+919961053621")} className="w-fit btn btn-primary mr-2"><FiPhone/> CONTACT</button>
+                        <button onClick={()=>window.open("tel:+919961053621")} className="w-fit btn btn-primary"><FiCheckCircle/> PROCEED</button>
+                        </div>
                     </div>
                 </div>
             })}

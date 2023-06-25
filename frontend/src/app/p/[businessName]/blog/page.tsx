@@ -11,7 +11,7 @@ type Params = {
     }
 }
 
-export default function Site({ params: { businessName } }: Params) {
+export default function Blog({ params: { businessName } }: Params) {
 
     const [businessData, setBusinessData] = useState<any>({ name: "" });
     const [closeChat, setCloseChat] = useState(false);
@@ -41,17 +41,14 @@ export default function Site({ params: { businessName } }: Params) {
         <div className="navbar" style={{ background: businessData?.category !== -1 ? businessCategories[businessData.category]?.color : "#DDC12D" }}>
             <div className="flex w-full justify-between">
                 <a className="btn btn-ghost normal-case text-xl" onClick={() => window.location.href = `/p/${businessName}/site`}>{businessData?.name}</a>
-                <div className="flex items-center">
-                    <button onClick={() => window.location.href = `/p/${businessName}/blog`} style={{ zIndex: "2" }} className="btn btn-primary"><FiBookOpen /> BLOG</button>
-                    <a className="btn btn-ghost normal-case text-xl" onClick={() => window.location.href = `/p/${businessName}/cart`}><FiShoppingCart /></a>
-                </div>
+                <a className="btn btn-ghost normal-case text-xl" onClick={() => window.location.href = `/p/${businessName}/cart`}><FiShoppingCart /></a>
             </div>
         </div>
         <main className="flex-1 w-auto h-full md:mx-16 mx-5">
             <div className="w-full h-[80vh] flex flex-col items-center justify-center text-black">
-                <p className="text-black font-semibold text-5xl">{businessData?.name}</p>
+                <p className="flex text-black font-semibold text-5xl"><FiBookOpen className="mr-2"/> {businessData?.name} Blog</p>
                 <p className="mt-5 text-gray-500 text-lg text-center">{businessData?.description}</p>
-                <button onClick={() => window.location.href = `/p/${businessName}`} style={{ zIndex: "2" }} className="mt-10 btn btn-primary">VIEW COLLECTIONS <FiArrowRight /></button>
+                <button style={{zIndex: "2"}} className="mt-10 btn btn-primary">VIEW POSTS <FiArrowRight /></button>
             </div>{businessData.name ? <div className="flex w-full justify-between absolute bottom-0 left-0">
                 <img src={businessData?.category !== -1 ? businessCategories[businessData.category]?.image : "https://cdn3d.iconscout.com/3d/premium/thumb/shopping-store-5130510-4292743.png"} alt="icon" width={250} height={250} />
                 <div style={{ background: businessData?.category !== -1 ? businessCategories[businessData.category]?.color : "#DDC12D" }} className="absolute right-[-80px] bottom-[-80px] rounded-full w-[250px] h-[250px]"></div>

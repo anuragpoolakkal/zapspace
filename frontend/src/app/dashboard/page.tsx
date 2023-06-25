@@ -39,7 +39,8 @@ export default function Dashboard() {
                 <button className="ml-3 btn" onClick={() => { window.open(`/p/${businessData?.businessId}/site`) }}><FiExternalLink /><p>View</p></button>
             </div>
         </div>
-        <div className="stats shadow my-4   ">
+        <p className="my-3 text-lg font-semibold">Analytics</p>
+        <div className="stats shadow   ">
 
             <div className="stat">
                 <div className="stat-figure text-secondary">
@@ -69,19 +70,17 @@ export default function Dashboard() {
             </div>
 
         </div>
-        <div className="card w-96 bg-base-100 shadow">
-            <div className="card-body">
-                <div className="flex">
-                    <h2 className="card-title mr-2">Blog</h2>
-                    <div className="flex">
-                        <p className="text-xs bg-green-600 text-white font-semibold rounded-md w-fit p-1">LATEST</p>
-                    </div>
-                </div>
-                <p>What's special about my coffee?</p>
-                <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Read</button>
-                </div>
-            </div>
-        </div>
+        <p className="my-3 text-lg font-semibold">Blogs</p>
+        <div className="card w-96 bg-base-100 shadow mr-4">
+				<div className="card-body">
+					<p className="text-sm">20 June 2023</p>
+					<div className="flex">
+						<h2 className="card-title mr-2">Checkout our latest collection!</h2>
+					</div>
+					<div className="card-actions justify-end">
+						<button className="btn btn-primary">Edit</button>
+					</div>
+				</div>
+			</div>
     </div>;
 }

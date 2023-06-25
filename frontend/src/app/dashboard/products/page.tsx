@@ -50,42 +50,42 @@ export default function Products() {
 	};
 
 
-	const handleAddProduct = async (event) => {
-		event.preventDefault();
-		const formData = new FormData();
-		const files = fileInputRef.current.files;
-		const name = event.target.elements.name.value;
-		const description = event.target.elements.description.value;
-		const price = event.target.elements.price.value;
-		const stock = event.target.elements.stock.value;
+	// const handleAddProduct = async (event) => {
+	// 	event.preventDefault();
+	// 	const formData = new FormData();
+	// 	const files = fileInputRef.current.files;
+	// 	const name = event.target.elements.name.value;
+	// 	const description = event.target.elements.description.value;
+	// 	const price = event.target.elements.price.value;
+	// 	const stock = event.target.elements.stock.value;
 
-		formData.append("name", name);
-		formData.append("description", description);
-		formData.append("price", price);
-		formData.append("stock", stock);
-		for (let i = 0; i < files.length; i++) {
-			formData.append("images", files[i]);
-		}
-		console.log(formData.getAll("images"));
+	// 	formData.append("name", name);
+	// 	formData.append("description", description);
+	// 	formData.append("price", price);
+	// 	formData.append("stock", stock);
+	// 	for (let i = 0; i < files.length; i++) {
+	// 		formData.append("images", files[i]);
+	// 	}
+	// 	console.log(formData.getAll("images"));
 
-		try {
-			const response = await axios.post(`${serverURL}/upload`, formData);
-			console.log(response.data);
-		} catch (error) {
-			console.error(error);
-		}
+	// 	try {
+	// 		const response = await axios.post(`${serverURL}/upload`, formData);
+	// 		console.log(response.data);
+	// 	} catch (error) {
+	// 		console.error(error);
+	// 	}
 
-		if (modalRef.current) {
-			modalRef.current.close();
-		}
-	};
+	// 	if (modalRef.current) {
+	// 		modalRef.current.close();
+	// 	}
+	// };
 
 
 	return (
 		<div className="flex flex-col text-black w-full">
 			<p className="text-2xl font-semibold mb-4">Products</p>
 			<div className="flex">
-				<button onClick={() => window.my_modal_1.showModal()} className="btn mb-2">
+				<button onClick={() => window.my_modal_3.showModal()} className="btn mb-2">
 					<FiPlus />
 					New Product
 				</button>
@@ -112,21 +112,21 @@ export default function Products() {
 			</main>
 			{/* Open the modal using ID.showModal() method */}
 			{(
-				<dialog id="my_modal_1" ref={modalRef} className="modal">
+				<dialog id="my_modal_3" ref={modalRef} className="modal">
 					<form
 						method="dialog"
 						className="modal-box"
-						onSubmit={handleAddProduct}
 					>
 						<h3 className="font-bold text-lg mb-3">New Product</h3>
-						<input
+						{/* <input
 							type="file"
 							placeholder="Product Image"
 							multiple
 							className="mb-4 input input-bordered w-full max-w-xs"
 							ref={fileInputRef}
 							onChange={(x) => { }}
-						/>
+						/> */}
+						<button className="btn btn-primary mb-4"><FiPlus/>Add Image</button><br/>
 						<input
 							type="text"
 							placeholder="Name"

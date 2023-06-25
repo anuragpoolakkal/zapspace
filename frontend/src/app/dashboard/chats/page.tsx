@@ -24,9 +24,6 @@ export default function Social() {
                     <div className="mb-1 bg-yellow-300 text-black p-4 m-4 w-fit rounded-md shadow">
                         Hello, I need a help
                     </div>
-                    <div className="bg-yellow-300 text-black p-4 m-4 w-fit rounded-md shadow">
-                        What color is your bugatti?
-                    </div>
                 </div>
                 <div className="flex p-4">
                     <input type="text" placeholder="Type here" className="mr-2 input input-bordered w-full" />

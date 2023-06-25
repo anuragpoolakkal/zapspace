@@ -1,6 +1,12 @@
+import { FiCalendar, FiDownload } from "react-icons/fi";
+
 export default function Analytics() {
     return <div className="flex flex-col text-black">
         <p className="text-2xl font-semibold mb-4">Analytics</p>
+        <div className="flex mb-3">
+            <button className="btn btn-primary"><FiCalendar />SORT BY</button>
+            <button className="btn btn-primary ml-3"><FiDownload />Download report</button>
+        </div>
         <div className="stats shadow">
 
             <div className="stat">

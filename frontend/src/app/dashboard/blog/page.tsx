@@ -22,18 +22,29 @@ export default function Blog() {
 					New Blog
 				</button>
 			</div>
-			<div></div>
-			<div className="card w-96 bg-base-100 shadow">
-				<div className="card-body">
-					<div className="flex">
-						<h2 className="card-title mr-2">Blog</h2>
+			<div className="flex">
+				<div className="card w-96 bg-base-100 shadow mr-4">
+					<div className="card-body">
+						<p className="text-sm">20 June 2023</p>
 						<div className="flex">
-							<p className="flex justify-center items-center text-xs bg-green-600 text-white font-semibold rounded-md w-fit p-1">LATEST</p>
+							<h2 className="card-title mr-2">Checkout our latest collection!</h2>
+						</div>
+						<div className="card-actions justify-end">
+							<button className="btn btn-primary">Edit</button>
 						</div>
 					</div>
-					<p>What's special about my coffee?</p>
-					<div className="card-actions justify-end">
-						<button className="btn btn-primary">Read</button>
+				</div>
+				<div className="card w-96 bg-base-100 shadow mr-4">
+					<div className="card-body">
+						<div className="flex flex-col">
+							<p className="text-sm">20 June 2023</p>
+							<div className="flex">
+								<h2 className="card-title mr-2">Enchanting World of Botanical-Inspired Pottery</h2>
+							</div>
+						</div>
+						<div className="card-actions justify-end">
+							<button className="btn btn-primary">Edit</button>
+						</div>
 					</div>
 				</div>
 			</div>
