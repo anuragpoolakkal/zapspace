@@ -1,0 +1,35 @@
+{
+    "businessName": "Sai's Cafe",
+    "products": [
+        {
+            "id": 1,
+            "name": "Boost Cocoa & Cream",
+            "price": 2.99,
+            "image": "https://www.nestlehealthscience.com/sites/g/files/dnigna366/files/asset-library/PublishingImages/recipes/BOOST/BOOST_CocoaCream.jpg"
+        },
+        {
+            "id": 1,
+            "name": "Boost Cocoa & Cream",
+            "price": 2.99,
+            "image": "https://www.nestlehealthscience.com/sites/g/files/dnigna366/files/asset-library/PublishingImages/recipes/BOOST/BOOST_CocoaCream.jpg"
+        },
+        {
+            "id": 1,
+            "name": "Boost Cocoa & Cream",
+            "price": 2.99,
+            "image": "https://www.nestlehealthscience.com/sites/g/files/dnigna366/files/asset-library/PublishingImages/recipes/BOOST/BOOST_CocoaCream.jpg"
+        },
+        {
+            "id": 1,
+            "name": "Boost Cocoa & Cream",
+            "price": 2.99,
+            "image": "https://www.nestlehealthscience.com/sites/g/files/dnigna366/files/asset-library/PublishingImages/recipes/BOOST/BOOST_CocoaCream.jpg"
+        },
+        {
+            "id": 1,
+            "name": "Boost Cocoa & Cream",
+            "price": 2.99,
+            "image": "https://www.nestlehealthscience.com/sites/g/files/dnigna366/files/asset-library/PublishingImages/recipes/BOOST/BOOST_CocoaCream.jpg"
+        }
+    ]
+}
