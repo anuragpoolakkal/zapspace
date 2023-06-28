@@ -1,4 +1,4 @@
-![image](https://github.com/anuragrajanp/zapspace/assets/69390743/628c0a53-d660-4a4a-8761-cc83e5967a91)
+<img src="./frontend/assets/Zapspace logo.png" width="300" height="300" />
 
 # Zapspace
 
