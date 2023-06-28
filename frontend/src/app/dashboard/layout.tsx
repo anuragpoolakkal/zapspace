@@ -50,7 +50,7 @@ export default function Dashboard({
                 </div>
                 <div className="w-full flex justify-between items-center pr-2">
                     <p className="pl-2 font-semibold text-white">{businessData?.name}</p>
-                    <FiChevronDown className="text-white" />
+                    <FiChevronDown className="text-white"   />
                 </div>
             </div>
             <div className="flex flex-col h-full bg-white rounded-lg p-[10px] mb-[10px]">
