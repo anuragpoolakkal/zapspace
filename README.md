@@ -1,4 +1,4 @@
-<img src="./frontend/assets/Zapspace logo.png" width="300" height="300" />
+<img src="./frontend/assets/Zapspace.png" width="300" height="300" />
 
 # Zapspace
 
